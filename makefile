@@ -20,12 +20,14 @@ interbash:
 # login to dockerhub
 .PHONY: login
 login:
-	docker login -u "DOCKER_USER"
+	docker login -u "peu80"
 
 # now push your image to dockerhub
+# we need to change the image name to match with the destination docker repo name
 .PHONY: push
 push:
-	docker push <DOCKER_USER>/<DOCKER_REPO>:latest
+	docker tag knn_iris peu80/ds5111_docker_lab
+	docker push peu80/ds5111_docker_lab:latest
 
 
 
